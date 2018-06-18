@@ -1,0 +1,43 @@
+/*------------------------------------*/
+/*  My Normalize                    
+/*------------------------------------*/
+*
+  box-sizing: border-box
+
+body 
+  // letter-spacing: 1px
+  overflow-x: hidden
+
+a 
+  text-decoration: none
+
+button
+  border: 0
+  outline: none
+
+img 
+  max-width: 100%
+  height: auto
+  +vertical-align()
+
+svg
+  stroke-width: 1
+  fill: transparent
+  stroke: currentColor
+  transition: stroke .1s
+
+ul 
+  list-style-type: none
+  -webkit-margin-before: 0em
+  -webkit-margin-after: 0em
+  -webkit-padding-start: 0px
+
+input, input.form-control
+  outline: none
+
+/* Icon */
+*[class*="fa-"]
+  &:before
+    margin-right: 8px 
+
+  

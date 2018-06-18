@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>02 | Filter | The F2E 前端修煉 精神時光屋</title>
+  <meta name="keywords" content="網頁設計, 前端, 工程師, F2E, UI, UX">
+  <meta name="description" content="前網頁設計師，正走在往前端的路上，成為網站開發工程師">
+  <!-- FB -->
+  <meta property="og:image" content="images/TheF2E_banner.jpg">
+  <meta property="og:title" content="網頁作品 | The F2E 前端修煉 精神時光屋">
+  <meta property="og:description" content="The F2E 前端修煉精神時光屋 第二題 Filter">
+  <meta property="og:url" content="https://github.com/Hsinny">
+  <link rel="icon" type="ico" href="images/favicon.ico">
+  <link rel="stylesheet" href="css/style-all.css">
+</head>
+<body>
+  <!-- 暫隱藏 -->
+  <nav class="navbar" style="display: none;">
+    <!-- Navbar Icon -->
+    <button id="navbar-toggler" class="navbar-toggler" type="button">
+      <svg class="navbar-toggler-icon" viewBox="0 0 50 37">
+        <line class="line-1" x1="1" y1="1"     x2="49" y2="1"/>
+        <line class="line-2" x1="1" y1="18.41" x2="49" y2="18.41"/>
+        <line class="line-3" x1="1" y1="35.82" x2="49" y2="35.82"/>
+      </svg>
+    </button>
+    <!-- Navbar Big Menu-->
+    <div id="navbar-collapse" class="navbar-collapse">
+      <div class="navbar-head">
+        <!-- Logo -->
+        <div class="navbar-brand">
+          <img src="images/brand-logo.svg" width="80" height="80" alt="Hsinny Brand Logo" title="Hsinny Brand Logo">
+        </div> 
+        <div class="brand-txt">
+          <div class="name">
+            Hsinny
+            <a href="https://github.com/Hsinny" target="_blank" rel="nofollow" id="my-github">
+              <img src="images/icon-github.svg" width="20" height="20" class="icon-github" alt="my github" title="my github">
+            </a>
+            <a href="https://codepen.io/Hsinny/" target="_blank" rel="nofollow" id="my-codepen">
+              <img src="images/icon-codepen.svg" width="20" height="20" class="icon-codepen" alt="my codepen" title="my codepen">
+            </a>
+          </div>
+          <div class="job">前網頁設計師 / 正走在往前端的路上</div>
+        </div>
+        <!-- Close -->
+        <button id="btn-close" class="btn-close" type="button">
+          <svg viewBox="0 0 32 32"><path d="M10,10 L22,22 M22,10 L10,22"></path></svg>
+        </button>
+      </div>
+      <!-- Navi List -->
+      <ul class="navi-menu">
+        <li class="nav-item">
+          <a class="nav-link" href="https://hsinny.github.io/TheF2E-00-signUp/" target="_blank">Weekly F2E #00 - 6/03 </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Weekly F2E #01 - 6/11 </a>
+        </li>
+        <li class="nav-item">
+          <span class="pill">Coming Soon</span>
+          <a class="nav-link">Weekly F2E #02 - 6/18 </a>
+        </li>
+        <li class="nav-item">
+          <span class="pill">敬請期待</span>
+          <a class="nav-link">Weekly F2E #03 - 6/25 </a>
+        </li>
+        <li class="nav-item">
+          <span class="pill">敬請期待</span>
+          <a class="nav-link">Weekly F2E #04 - 7/2 </a>
+        </li>
+        <li class="nav-item">
+          <span class="pill">敬請期待</span>
+          <a class="nav-link">Weekly F2E #05 - 7/9 </a>
+        </li>
+        <li class="nav-item">
+          <span class="pill">敬請期待</span>
+          <a class="nav-link">Weekly F2E #06 - 7/16 </a>
+        </li>
+        <li class="nav-item">
+          <span class="pill">敬請期待</span>
+          <a class="nav-link">Weekly F2E #07 - 7/23 </a>
+        </li>
+        <li class="nav-item">
+          <span class="pill">敬請期待</span>
+          <a class="nav-link">Weekly F2E #08 - 7/30 </a>
+        </li>
+        <li class="nav-item">
+          <span class="pill">敬請期待</span>
+          <a class="nav-link">Weekly F2E #09 - 8/6 </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Stage 2 Start -->
+  <main>
+    <!-- Navi -->
+    <div class="header justify-content-between">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a class="navbar-brand">
+              <a href="index.html"><img src="images/logo-filter.svg" width="157" height="44" alt="Hsinny Brand Logo" title="Hsinny Brand Logo"></a>
+            </a>
+          </div>
+          <div class="col-md-8">
+            <form class="form-search">
+              <input id="input-search" class="form-control mr-sm-2 input-serch" type="search" placeholder="Explore your own activities" aria-label="Search">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <aside class="filter"> <!--ＲＷＤ是手風琴--> <!-- aside 網頁的側欄、附加內容 -->
+              <!-- filter-item -->
+              <div class="filter-item">
+                <div class="title">Location</div>
+                <select name="" id="select-city" class="select-location">
+                  <option class="" value="taipei">台北(<span class="">789</span>)</option>
+                  <option class="" value="taoyuan">桃園</option>
+                  <option class="" value="hsinchu">新竹</option>
+                  <option class="" value="miaoli">苗栗</option>
+                  <option class="" value="taichung">台中</option>
+                  <option class="" value="nantou">南投</option>
+                  <option class="" value="changhua">彰化</option>
+                  <option class="" value="yunlin">雲林</option>
+                  <option class="" value="chiayi">嘉義</option>
+                  <option class="" value="tainan">台南</option>
+                  <option class="" value="kaohsiung">高雄</option>
+                  <option class="" value="pingtung">屏東</option>
+                  <option class="" value="yilan">宜蘭</option>
+                  <option class="" value="hualien">花蓮</option>
+                  <option class="" value="taitung">台東</option>
+                  <option class="" value="penghu">澎湖</option>
+                </select>
+              </div>
+              <!-- filter-item -->
+              <div class="filter-item">
+                <div class="title">Date</div>
+                <div class="input-item">
+                  <span>from</span>
+                  <input type="text" value="09:00" class="input-date">
+                </div>
+                <div class="input-item">
+                  <span>to</span>
+                  <input type="text" value="21:00" class="input-date">
+                </div>
+              </div>
+              <!-- filter-item -->
+              <div class="filter-item">
+                <div class="title">Categories</div>
+                <form id="checkbox-group" class="checkbox-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="checkAll" value="All">
+                    <label class="form-check-label">All</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkItem" value="無限時">
+                    <label class="form-check-label">無限時</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkItem" value="插座">
+                    <label class="form-check-label">插座</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkItem" value="站立工作桌">
+                    <label class="form-check-label">站立工作桌</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="checkItem" value="靠捷運站">
+                    <label class="form-check-label">靠捷運站</label>
+                  </div>
+                </form>
+              </div>
+            </aside>
+          </div>
+          <div class="col-md-8">
+            <div class="main">
+              <div class="display-4">目前已收錄全台<span id="results-num"></span>咖啡店</div>
+              <span class="badge badge-pill  badge-outline-primary-light">
+                Primary<a href=""><i class="far fa-times-circle"></i></a>
+              </span>
+              <!-- 撈到的資料顯示在這 -->
+              <ul id="card-group-custom">
+              </ul>
+              <!-- Pagination -->
+              <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- <footer class="footer">
+    圖片素材來源為<a href="https://github.com/hexschool/TheF2E" target="_blank" rel="nofollow">六角學院 The F2E活動</a>
+  </footer> -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/fontawesome-all.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <!-- <script src="js/signUp.js"></script> -->
+  <script src="js/filter.js"></script>
+</body>
+</html>

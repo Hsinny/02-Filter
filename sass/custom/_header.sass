@@ -1,0 +1,113 @@
+/*------------------------------------*/
+/*  Navigation     
+/*------------------------------------*/
+nav
+  z-index: 9999
+.navbar-toggler
+  +size(50px,37px)
+  color: #fff
+  background-color: transparent
+  position: fixed
+  top: 30px
+  left: 20px
+  transition: 1s
+  &:hover
+    transform: rotate(180deg)
+    transition: 1s
+
+.navbar-collapse
+  +size(400px,100vh)
+  background-color: #222
+  box-shadow: 2px 0px 10px $blue-dark
+  position: absolute
+  left: 0   // menu定位在0，利用translateX做位移隱藏選單
+  transform: translateX(-100%)
+  transition: 2s
+  z-index: 9998
+
+#navbar-collapse.show
+  transform: translateX(0)  // 取消translateX的位移顯示選單
+  transition: 2s
+
+.navbar-head
+  +size(100%, 80px)
+  background-color: #eee
+  +flex(space-between)
+  .name
+    font-size: 20px
+    font-family: 'Raleway', sans-serif
+    font-weight: 500
+    letter-spacing: 1px
+  .icon-github
+    margin-left: -2px
+    vertical-align: text-top
+  .icon-codepen
+    vertical-align: text-top
+  .job
+    color: #777
+    font-size: 12px
+  .btn-close
+    +size(70px, auto)
+    +btn(#333, transparent)
+    transition: 0.5s
+    &:hover svg
+      transform: rotate(180deg)
+      transition: 0.5s
+
+.navi-menu
+  background-color: #222
+  list-style: none
+  -webkit-margin-after: 0
+  -webkit-padding-start: 0
+  -webkit-margin-before: 0
+  .nav-item
+    border-bottom: 1px solid #555
+    padding: 30px 60px
+    a
+      color: #777
+      font-size: 15px
+      font-weight: 300      
+    .pill
+      color: #fff
+      background-color: darken(#2fd566, 50%)     
+      border-radius: 5px
+      font-size: 12px 
+      padding: 2px 4px
+
+
+@media (max-width: 575px)
+  .navbar-collapse 
+    width: 375px    
+    height: auto
+
+  .navbar-head
+    height: 70px
+  
+  .navbar-brand img 
+    width: 70px
+
+  .navi-menu 
+    .nav-item 
+      padding: 20px 30px
+
+
+@media (max-width: 374px)
+  .navbar-toggler 
+    +size(40px)
+    top: 15px
+    left: 10px
+
+  .navbar-collapse 
+    width: 100vw  
+
+  .navbar-head
+    height: 55px
+    .btn-close
+      +size(40px)
+      padding: 0
+
+  .navbar-brand img 
+    width: 55px
+
+  .navi-menu .nav-item 
+    padding: 17px
